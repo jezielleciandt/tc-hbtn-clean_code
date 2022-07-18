@@ -1,7 +1,6 @@
 
 public class Functions {
     // Faça somente 1 coisa
-
     //B
     public void saveIncome(Income income){
         inRepo.save(income);
@@ -23,14 +22,6 @@ public class Functions {
     public void saveUser(User user){};
 
     //  No side effects
-    //A
-//    public User saveUser(User user){
-//        if(user.isAdmin){
-//            user.setRole(user);
-//        }
-//        return userRepository.save(user);
-//    }
-
     //B
     public User saveUser(User user){
         return userRepository.save(user);
@@ -40,15 +31,6 @@ public class Functions {
     }
 
     // Evite duplicados, extraindo para novos métodos
-    //A
-//    public Environment getEnvironment(){
-//        String version = versionService.getVersion();
-//        return environmentService.getEnvironment(version);
-//    }
-//    public Release getRelease(){
-//        String version = versionService.getVersion();
-//        return releaseService.getRelease(version);
-//    }
     //B
     public Environment getEnvironment(){
         return environmentService.getEnvironment(getVersion());
